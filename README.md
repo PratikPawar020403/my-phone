@@ -95,16 +95,6 @@ This project is configured for **Netlify**.
 
 ---
 
-## 👤 Author
-
-**Pratik Pawar**
-
-*   [GitHub](https://github.com/PratikPawar020403)
-*   [LinkedIn](https://www.linkedin.com/in/pratik-s-pawar-780443358/)
-*   [Email](mailto:pratikpawar0222@gmail.com)
-
----
-
 <p align="center">
   <i>"It's not just a portfolio, it's an experience."</i>
 </p>
