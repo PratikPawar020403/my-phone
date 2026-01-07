@@ -1,13 +1,6 @@
 # 📱 PhoneOS Portfolio
 
-> An interactive, fully functional web portfolio designed to mimic a modern mobile operating system.
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-19-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
-![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38bdf8)
-
----
+ An interactive, fully functional web portfolio designed to mimic a modern mobile operating system.
 
 ## ✨ Overview
 
@@ -15,7 +8,6 @@
 
 It features real-time theming, smooth animations, and a responsive design that works beautifully on both desktop and mobile.
 
----
 
 ## 🚀 Key Features
 
