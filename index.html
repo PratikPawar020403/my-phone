@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>PhoneOS Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Varela+Round&family=Orbitron:wght@400;700;900&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+
+    /* Custom Scrollbar */
+    .app-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .app-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .app-scroll::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 20px;
+    }
+
+    /* FRUTIGER AERO / GLASS ECO STYLES */
+    .theme-frutiger .glass-panel {
+      /* "Milk Glass" look - white, semi-transparent, blurry */
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-top: 1px solid rgba(255, 255, 255, 1.0);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Glass Tile Icon Style - Bubble Effect */
+    .glass-tile {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 100%);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-tile::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    /* Gel Progress Bar - Liquid Energy */
+    .gel-bar {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.05) 100%);
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gel-bar::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 4px;
+      right: 4px;
+      height: 35%;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      z-index: 10;
+      filter: blur(1px);
+    }
+
+    /* CYBER / ROBOT STYLES */
+    .theme-cyber {
+      font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
+    }
+
+    /* Hexagon Clip Path */
+    .hex-icon {
+      clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+      background: rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    /* Glowing Border Hack for Clip Path */
+    .hex-border-wrap {
+      filter: drop-shadow(0 0 2px #00f0ff);
+    }
+
+    /* Tech HUD Panel with Cut Corners */
+    .hud-panel {
+      background: rgba(10, 15, 20, 0.85);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+      backdrop-filter: blur(8px);
+      clip-path: polygon(10px 0, 100% 0,
+          100% calc(100% - 10px), calc(100% - 10px) 100%,
+          0 100%, 0 10px);
+      position: relative;
+    }
+
+    .hud-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: 2px;
+      background: #00f0ff;
+      box-shadow: 0 0 5px #00f0ff;
+    }
+
+    /* CRT Scanline Effect */
+    .scanlines {
+      background: linear-gradient(to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 0.2) 50%,
+          rgba(0, 0, 0, 0.2));
+      background-size: 100% 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.5s ease-out;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes glitch {
+      0% {
+        transform: translate(0)
+      }
+
+      20% {
+        transform: translate(-2px, 2px)
+      }
+
+      40% {
+        transform: translate(-2px, -2px)
+      }
+
+      60% {
+        transform: translate(2px, 2px)
+      }
+
+      80% {
+        transform: translate(2px, -2px)
+      }
+
+      100% {
+        transform: translate(0)
+      }
+    }
+
+    .animate-glitch {
+      animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    }
+
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 20s linear infinite;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/app/index.tsx"></script>
+</body>
+
+</html>

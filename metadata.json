@@ -1,0 +1,5 @@
+{
+  "name": "PhoneOS Portfolio",
+  "description": "A fully interactive portfolio website simulating a mobile operating system interface using React, Tailwind, and Gemini 2.5.",
+  "requestFramePermissions": []
+}
