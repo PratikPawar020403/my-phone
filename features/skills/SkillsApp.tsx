@@ -244,7 +244,7 @@ export const StackGameApp: React.FC<AppProps> = ({ onClose, theme }) => {
                     <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-1 rounded-full bg-current opacity-20" />
 
                     <div className={`flex-1 p-6 overflow-y-auto app-scroll pt-8 ${shaking === 'pool' ? 'animate-glitch' : ''}`}>
-                        <div className="flex flex-wrap gap-3 justify-center content-start pb-10">
+                        <div className="flex flex-wrap gap-3 justify-center content-start pb-48">
                             {unplacedSkills.map(skill => (
                                 <button
                                     key={skill.id}

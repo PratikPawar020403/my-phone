@@ -96,7 +96,7 @@ export const IdentityApp: React.FC<AppProps> = ({ onClose, theme }) => {
                                 </span>
                             </div>
                             <h2 className={`text-xl font-bold mb-2 ${theme === 'frutiger' ? 'text-primary-dark' : 'text-slate-800'}`}>{currentEvent.title}</h2>
-                            <p className={`text-sm leading-relaxed line-clamp-3 ${theme === 'frutiger' ? 'text-muted-dark' : 'text-slate-500'}`}>
+                            <p className={`text-sm leading-relaxed overflow-y-auto max-h-[120px] app-scroll pr-2 ${theme === 'frutiger' ? 'text-muted-dark' : 'text-slate-500'}`}>
                                 {currentEvent.description}
                             </p>
                         </div>
