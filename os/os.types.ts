@@ -1,4 +1,3 @@
-
 export interface FileItem {
     id: string;
     name: string;
@@ -93,6 +92,7 @@ export const FILE_SYSTEM: FileItem[] = [
             { id: 'forage-2', name: 'forage2.pdf', type: 'image', size: '396 KB', date: '01/2026', content: '/assets/docs/forage2.pdf' },
             { id: 'certi9', name: 'certi9.pdf', type: 'image', size: '2.1 MB', date: '01/2026', content: '/assets/docs/certi9.pdf' },
             { id: 'pratik-cert', name: 'Pratik_S_Pawar_Certificate.pdf', type: 'image', size: '170 KB', date: '01/2026', content: '/assets/docs/Pratik_S_Pawar_Certificate.pdf' },
+            { id: 'guvi-buildathon', name: 'guvibuildathon.pdf', type: 'image', size: '90.5 KB', date: '02/2026', content: '/assets/docs/guvibuildathon.pdf' },
             {
                 id: 'research-paper-old',
                 name: 'A Paradigm Shift in Enterprise.pdf',
